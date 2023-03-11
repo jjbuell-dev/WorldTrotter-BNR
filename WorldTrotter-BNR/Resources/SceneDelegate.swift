@@ -16,10 +16,31 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        
+        window = UIWindow(windowScene: windowScene)
+        
+        let viewController = createTabBarController()
+        window?.rootViewController = viewController
+        window?.makeKeyAndVisible()
+    }
+    
+    func createTabBarController() -> UITabBarController {
+        let tabBarController = UITabBarController()
+        tabBarController.viewControllers = [createConversionViewContoller(), createMapViewController()]
+        return tabBarController
+    }
+    
+    func createConversionViewContoller() -> UINavigationController {
+        let conversionViewController = ConversionViewController()
+        conversionViewController.tabBarItem = UITabBarItem(title: "Convert", image: UIImage(named: "ConvertIcon"), tag: 0)
+        return UINavigationController(rootViewController: conversionViewController)
+    }
+    
+    func createMapViewController() -> UINavigationController {
+        let mapViewController = MapViewController()
+        mapViewController.tabBarItem = UITabBarItem(title: "Map", image: UIImage(named: "MapIcon"), tag: 1)
+        return UINavigationController(rootViewController: mapViewController)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
