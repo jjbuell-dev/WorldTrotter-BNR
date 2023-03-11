@@ -19,5 +19,4 @@ class MapViewController: UIViewController {
 
         print("MapViewController loaded its view")
     }
-
 }
