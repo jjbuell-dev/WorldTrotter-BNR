@@ -56,9 +56,9 @@
 		2C57D37A29BD105F008A4734 /* WorldTrotter-BNR */ = {
 			isa = PBXGroup;
 			children = (
-				2C57D38F29BD1075008A4734 /* Resources */,
 				2C57D37F29BD105F008A4734 /* ConversionViewController.swift */,
 				2C57D38129BD105F008A4734 /* Main.storyboard */,
+				2C57D38F29BD1075008A4734 /* Resources */,
 			);
 			path = "WorldTrotter-BNR";
 			sourceTree = "<group>";
