@@ -13,6 +13,7 @@
 		2C57D38329BD105F008A4734 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C57D38129BD105F008A4734 /* Main.storyboard */; };
 		2C57D38529BD1060008A4734 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C57D38429BD1060008A4734 /* Assets.xcassets */; };
 		2C57D38829BD1060008A4734 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C57D38629BD1060008A4734 /* LaunchScreen.storyboard */; };
+		2C57D39129BD1956008A4734 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C57D39029BD1956008A4734 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		2C57D38429BD1060008A4734 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C57D38729BD1060008A4734 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2C57D38929BD1060008A4734 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C57D39029BD1956008A4734 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				2C57D37F29BD105F008A4734 /* ConversionViewController.swift */,
+				2C57D39029BD1956008A4734 /* MapViewController.swift */,
 				2C57D38129BD105F008A4734 /* Main.storyboard */,
 				2C57D38F29BD1075008A4734 /* Resources */,
 			);
@@ -149,6 +152,7 @@
 				2C57D38029BD105F008A4734 /* ConversionViewController.swift in Sources */,
 				2C57D37C29BD105F008A4734 /* AppDelegate.swift in Sources */,
 				2C57D37E29BD105F008A4734 /* SceneDelegate.swift in Sources */,
+				2C57D39129BD1956008A4734 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
