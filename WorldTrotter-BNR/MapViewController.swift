@@ -37,11 +37,31 @@ class MapViewController: UIViewController {
     // MARK: - Segmented Control Actions
     @objc func mapTypeChanged(_ segControl: UISegmentedControl) {
         switch segControl.selectedSegmentIndex {
-        case 0: mapView.mapType = .standard
-        case 1: mapView.mapType = .hybrid
-        case 2: mapView.mapType = .satellite
+        case 0:
+            mapView.mapType = .standard
+            pointsOfInterestLabel.textColor = .black
+            
+        case 1:
+            mapView.mapType = .hybrid
+            pointsOfInterestLabel.textColor = .white
+            
+        case 2:
+            mapView.mapType = .satellite
+            pointsOfInterestLabel.textColor = .white
             
         default: break
+        }
+    }
+    
+    // MARK: - Points of Interest Switch Actions
+    
+    @objc func switchToggled(_ poiSwitch: UISwitch) {
+        switch poiSwitch.isOn {
+        case true:
+            mapView.pointOfInterestFilter = MKPointOfInterestFilter.includingAll
+ 
+        case false:
+            mapView.pointOfInterestFilter = MKPointOfInterestFilter.excludingAll
         }
     }
     
@@ -85,6 +105,8 @@ class MapViewController: UIViewController {
     private func setupPointsOfInterestSwitch() {
         pointsOfInterestSwitch.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(pointsOfInterestSwitch)
+        
+        pointsOfInterestSwitch.addTarget(self, action: #selector(switchToggled(_:)), for: .valueChanged)
         
         NSLayoutConstraint.activate([
             pointsOfInterestSwitch.centerYAnchor.constraint(equalTo: pointsOfInterestLabel.centerYAnchor),
