@@ -17,6 +17,8 @@ class MapViewController: UIViewController {
     
     var mapView: MKMapView!
     let segmentedControl = UISegmentedControl(items: ["Standard", "Hybrid", "Satellite"])
+    let pointsOfInterestLabel = UILabel()
+    let pointsOfInterestSwitch = UISwitch()
     
     // MARK: - View Life Cycle
     
@@ -47,6 +49,8 @@ class MapViewController: UIViewController {
     
     private func setupUI() {
         setupSegmentedControl()
+        setupPointsOfInterestLabel()
+        setupPointsOfInterestSwitch()
     }
     
     private func setupSegmentedControl() {
@@ -63,6 +67,28 @@ class MapViewController: UIViewController {
             segmentedControl.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8),
             segmentedControl.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
             segmentedControl.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor)
+        ])
+    }
+    
+    private func setupPointsOfInterestLabel() {
+        pointsOfInterestLabel.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(pointsOfInterestLabel)
+        
+        pointsOfInterestLabel.text = "Points of Interest"
+        
+        NSLayoutConstraint.activate([
+            pointsOfInterestLabel.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 12),
+            pointsOfInterestLabel.leadingAnchor.constraint(equalTo: segmentedControl.leadingAnchor, constant: 4),
+        ])
+    }
+    
+    private func setupPointsOfInterestSwitch() {
+        pointsOfInterestSwitch.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(pointsOfInterestSwitch)
+        
+        NSLayoutConstraint.activate([
+            pointsOfInterestSwitch.centerYAnchor.constraint(equalTo: pointsOfInterestLabel.centerYAnchor),
+            pointsOfInterestSwitch.leadingAnchor.constraint(equalTo: pointsOfInterestLabel.trailingAnchor, constant: 8)
         ])
     }
 }
